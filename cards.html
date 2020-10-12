@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Cards</title>
+</head>
+<body>
+        <h1 id="helloName"></h1>
+
+        <nav   class="nav-fields" >
+            <input class="nav-item" placeholder="Search By Name:" id="searchCards" type="text">
+            <select  class="nav-item" id="typeDropDown" value="selectType">
+
+                <option  value="null">Select Type</option>
+            </select>
+
+            <select class="nav-item" id="colorDropDown" value="selectColors">
+                <option value="null" name="" id="">Select Color</option>
+                <option value="White">White</option>
+                <option value="Blue">Blue</option>
+                <option value="Black">Black</option>
+                <option value="Red">Red</option>
+                <option value="Green">Green</option>
+            </select>
+
+            <select class="nav-item" id="sortDropDown" value="sort">
+                <option value="null" name="" id="">Sort By:</option>
+                <option value="ascending">Ascending</option>
+                <option value="descending">Descending</option>
+            </select>
+
+            <button id="searchBtn" class="nav-item nav-btn">Search</button>
+        </nav>
+
+        <div id="output">
+            
+        </div>
+        <div id="renderCards" class="cards-container">
+            
+    </div>
+    
+<script src="cardsScript.js"></script>
+</body>
+</html>

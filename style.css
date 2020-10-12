@@ -1,0 +1,377 @@
+html {
+    height: 100%;
+  }
+  body {
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+    background: #333;
+  }
+/* Targeting the Welcome element */
+  .welcome{
+    padding-top: 5%;
+    text-align: center;
+    color: #fff;
+  }
+  /* Log In Box */
+  .login-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+  }
+  /*Targeting the H2 Element of the Log in box in order to make it more center*/
+  .login-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+  }
+  /*Making the login-box and the User box relative to each other*/
+  .login-box .user-box {
+    position: relative;
+  }
+   /*Targeting the user box input to make it more catchy*/
+  .login-box .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+  }
+  /*Same witht the label*/
+  .login-box .user-box label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+  }
+   /*Now here when the user focues  some slight changes are made*/
+  .login-box .user-box input:focus ~ label,
+  .login-box .user-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 12px;
+  }
+  /*I used an A link for the buton so I targeted it to make it look like a btn*/
+  .login-box form a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #03e9f4;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px
+  }
+  /*Giving the hover effect on the button*/
+  .login-box a:hover {
+    background: #03e9f4;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 100px #03e9f4;
+  }
+  
+  .login-box a span {
+    position: absolute;
+    display: block;
+  }
+   /*giving some animotion to the first child*/
+  .login-box a span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #03e9f4);
+    animation: btn-anim1 1s linear infinite;
+  }
+   
+  @keyframes btn-anim1 {
+    0% {
+      left: -100%;
+    }
+    50%,100% {
+      left: 100%;
+    }
+  }
+  /*giving some animotion to the second child*/
+  .login-box a span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #03e9f4);
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: .25s
+  }
+  
+  @keyframes btn-anim2 {
+    0% {
+      top: -100%;
+    }
+    50%,100% {
+      top: 100%;
+    }
+  }
+  
+  .login-box a span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #03e9f4);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: .5s
+  }
+  
+  @keyframes btn-anim3 {
+    0% {
+      right: -100%;
+    }
+    50%,100% {
+      right: 100%;
+    }
+  }
+  
+  .login-box a span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #03e9f4);
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: .75s
+  }
+  
+  @keyframes btn-anim4 {
+    0% {
+      bottom: -100%;
+    }
+    50%,100% {
+      bottom: 100%;
+    }
+  }
+   /*Giving the output in the red color when there is an  error*/
+  .log-in-output-error{
+
+    color: red;
+
+  }
+ /*Giving the output in the green color when  loging in*/
+  .log-in-output-success{
+      color: green;
+  }
+
+
+/*The loader was copy pasted from the internet, however I can explain what each property does*/
+  .lds-roller {
+    display: inline-block;
+    position: fixed;
+    width: 80px;
+    height: 80px;
+    top: 50%;
+    left: 47%;
+    transform: translate(-50%, -50%);
+  }
+  .lds-roller div {
+    animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    transform-origin: 40px 40px;
+    top: 50%;
+    left: 50%;
+  }
+  .lds-roller div:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #fff;
+    margin: -4px 0 0 -4px;
+    
+  }
+  .lds-roller div:nth-child(1) {
+    animation-delay: -0.036s;
+  }
+  .lds-roller div:nth-child(1):after {
+    top: 63px;
+    left: 63px;
+  }
+  .lds-roller div:nth-child(2) {
+    animation-delay: -0.072s;
+  }
+  .lds-roller div:nth-child(2):after {
+    top: 68px;
+    left: 56px;
+  }
+  .lds-roller div:nth-child(3) {
+    animation-delay: -0.108s;
+  }
+  .lds-roller div:nth-child(3):after {
+    top: 71px;
+    left: 48px;
+  }
+  .lds-roller div:nth-child(4) {
+    animation-delay: -0.144s;
+  }
+  .lds-roller div:nth-child(4):after {
+    top: 72px;
+    left: 40px;
+  }
+  .lds-roller div:nth-child(5) {
+    animation-delay: -0.18s;
+  }
+  .lds-roller div:nth-child(5):after {
+    top: 71px;
+    left: 32px;
+  }
+  .lds-roller div:nth-child(6) {
+    animation-delay: -0.216s;
+  }
+  .lds-roller div:nth-child(6):after {
+    top: 68px;
+    left: 24px;
+  }
+  .lds-roller div:nth-child(7) {
+    animation-delay: -0.252s;
+  }
+  .lds-roller div:nth-child(7):after {
+    top: 63px;
+    left: 17px;
+  }
+  .lds-roller div:nth-child(8) {
+    animation-delay: -0.288s;
+  }
+  .lds-roller div:nth-child(8):after {
+    top: 56px;
+    left: 12px;
+  }
+  @keyframes lds-roller {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  /*Targeting the navigation bar. I used CSS Grid for the layout*/
+  .nav-fields{  
+    
+  display: grid;
+
+  grid-template-rows: auto;
+  grid-template-columns: 0.2fr 0.2fr 0.2fr 0.2fr 0.2fr;
+  grid-gap:2%;
+  align-items: center;
+  padding-right: 5%;
+  padding-left: 5%;
+  margin-top: 3%;
+  border: 1px white solid;
+  border-radius: 10px;
+  padding-top:10px;
+  padding-bottom: 10px;
+  margin-left:10px;
+  margin-right:10px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 10px;
+  background: rgba(255,255,255,0.6);
+
+  font-weight: bolder;
+  }
+ /*Targeting each item on the navigation/search bar*/
+  .nav-item{
+
+    padding: 20px;
+    background: rgba(0,0,0,.5);
+    border: white 1px solid;
+    border-radius: 10px;
+    color:#70adb5;
+    font-weight: bolder;
+  }
+  /*Targeting the Search button in the second page to add shadows and animation*/
+  .nav-btn:hover{
+   
+    background: #a2b9bc;
+    font-weight: bolder;
+    color: white;
+    border-radius: 2.5px;
+    box-shadow: 0 0 0.5px #a2b9bc,
+                0 0 12px#a2b9bc,
+                0 0 25px #a2b9bc,
+                0 0 50px #a2b9bc;
+                animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) ;
+  }
+/*Giving a little style when the button is clicked*/
+  .nav-btn:active{
+    background-color: #20344C;
+    color: white;
+    transform: translateY(4px);
+  }
+
+/*This targets the cards that are get from the APi. */
+  .cards-container{
+
+    display: grid;
+    grid-template-rows: 0.2fr 0.2fr 0.2fr 0.2fr;
+    grid-template-columns:  0.2fr 0.2fr 0.2fr 0.2fr 0.2fr;
+    grid-gap:2%;
+    align-items: center;
+    padding-right: 5%;
+    padding-left: 5%;
+    margin-top: 3%;
+    color: #fff;
+    
+    
+    
+    
+  } 
+/*Each element has a div so it's targeted*/
+  div.cards-container > div {
+    border-right: 2px solid white;
+    
+    border-radius: 0 0 20px 0;
+    padding-left: 10px;
+    box-shadow: 0px 0px 1px #888888;
+  }
+/*When each query has no results these properties are assigned */
+  .nocontent {
+    text-align: center;
+    color: red;
+  }
+/*And this targets the Name in the cards.html file*/
+  #helloName {
+    
+    color: white;
+    display: block;
+    text-align: center;
+
+  }
+
+
+
+
+
+  
